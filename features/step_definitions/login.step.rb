@@ -1,19 +1,15 @@
 Dado('que estou na pagina de cadastro da ForwardCar') do
-    visit ''
-    sleep 5
+  register.load
   end
   
   Quando('digito dados solicitados corretamente') do
-    @test = RegisterPage.new
-    @test.realizarCadastro   
-    sleep 5
+    register.realizarCadastro
+
   end
   
   Entao('sitema me retorna para pagina de login') do
-    find('.panel-title')
-    mensagemLogin = ('.panel-title')
-    expect(mensagemLogin.text).to eql "Please sign in"
-    sleep 5 
+   login.conferirURLLogin
+   
    
   end
   Quando('digito dados solicitados com username existente') do
