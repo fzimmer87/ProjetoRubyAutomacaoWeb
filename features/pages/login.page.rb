@@ -8,4 +8,7 @@ class LoginPage  < SitePrism::Page
     def conferirURLLogin
         expect(page).to have_current_path('http://localhost:3434/cars-app/#/login',url:true)
     end
+    def conferirUrlRegister
+        expect(page).to have_current_path('http://localhost:3434/cars-app/#/register',url:true)
+    end
 end

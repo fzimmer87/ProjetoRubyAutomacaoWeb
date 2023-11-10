@@ -11,8 +11,8 @@ Entao sitema me retorna para pagina de login
 
 @CT002
 Cenario: Não realizar cadastro com username existente
-Quando digito dados solicitados com username existente
-Entao sistema nao realiza cadastro e continua na mesma pagina
+Quando digito dados solicitados com username ja cadastrado
+Entao sistema nao realiza cadastro novo cadastro
 
 @CT003
 Cenario: Realizar Login com dados cadastrados

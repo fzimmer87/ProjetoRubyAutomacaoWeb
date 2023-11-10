@@ -6,11 +6,22 @@ class RegisterPage < SitePrism::Page
     element :userName, :xpath, "//*[@id='registration-form']/fieldset/div[3]/input"
     element :password, :xpath, "//*[@id='registration-form']/fieldset/div[4]/input"
     element :buttonRegister, :xpath, "//*[@id='registration-form']/fieldset/div[5]/button"
+    element :buttonGuest, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]"
+    element :buttoRegisterGuest, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[2]/a"
 
     def realizarCadastro
         firstName.set "Fernanda"
         lastName.set "Zimmer"
-        userName.set "zimmer"
+        userName.set "zimmer1"
+        password.set "1234"
+        buttonRegister.click
+    end
+    def realizarCadastroNovamente
+        buttonGuest.click
+        buttoRegisterGuest.click
+        firstName.set "Fernanda"
+        lastName.set "Zimmer"
+        userName.set "zimmer1"
         password.set "1234"
         buttonRegister.click
     end

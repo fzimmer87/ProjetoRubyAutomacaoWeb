@@ -12,12 +12,13 @@ Dado('que estou na pagina de cadastro da ForwardCar') do
    
    
   end
-  Quando('digito dados solicitados com username existente') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('digito dados solicitados com username ja cadastrado') do
+    register.realizarCadastro
+    register.realizarCadastroNovamente
   end
   
-  Entao('sistema nao realiza cadastro e continua na mesma pagina') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Entao('sistema nao realiza cadastro novo cadastro') do
+    login.conferirUrlRegister
   end
   
   Quando('que realizo cadastro na pagina da ForwardCar') do
