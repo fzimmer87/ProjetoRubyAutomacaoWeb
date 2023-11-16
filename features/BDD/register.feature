@@ -22,12 +22,14 @@ Entao sistema retorna para pagina principal com meu nome no lugar de Guest
 
 @CT004
 Cenario: Realizar pesquisa por cor de carro
-E clico no botao search
-Quando digito as cores no campo de pesquisa
-Entao sistema me retorna modelos com cores digitadas
+E clico no botao search na pagina inicial
+Quando digito o modelo Acura no campo de pesquisa
+Entao sistema me retorna modelos digitadas
 
 @CT005
-Cenario: Realizar pesquisa por nome de modelo de carro
-E clico no botao search
-Quando digito os modelos no campo de pesquisa
-Entao sistema me retorna modelos com marca digitada
+Cenario: Realizar empréstimo
+E realizo login
+E clico em LoanApplication
+Quando digito meus dados nos campos de cadastro de emprestimo
+E clico LoanStatus
+Entao consigo consultar dados do meu emprestimo

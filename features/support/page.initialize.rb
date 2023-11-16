@@ -7,5 +7,7 @@ Dir[File.join(File.dirname(__FILE__),'~\..\AutomacaoForwardCarRuby\features\page
     def register
         @register||=RegisterPage.new
     end
-  
+    def inventory
+      @inventory||=InventoryPage.new
+  end
 end

@@ -7,5 +7,5 @@ Quando('que realizo cadastro na pagina da ForwardCar') do
   end
   
   Entao('sistema retorna para pagina principal com meu nome no lugar de Guest') do
-    register.conferirUrlHome
+    login.conferirUrlHome
   end

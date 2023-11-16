@@ -1,19 +1,13 @@
-Dado('clico no botao search') do
-    pending # Write code here that turns the phrase above into concrete actions
+Dado('clico no botao search na pagina inicial') do
+    inventory.clicarBotaoSearchPaginaHome
   end
   
-  Quando('digito as cores no campo de pesquisa') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('digito o modelo Acura no campo de pesquisa') do
+    sleep 5
+  inventory.digitarSearchInventory
   end
   
-  Entao('sistema me retorna modelos com cores digitadas') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Quando('digito os modelos no campo de pesquisa') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Entao('sistema me retorna modelos com marca digitada') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Entao('sistema me retorna modelos digitadas') do
+    sleep 5
+    inventory.encontrarNomeAcuraNaTela
   end

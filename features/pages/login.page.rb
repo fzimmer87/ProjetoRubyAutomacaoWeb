@@ -1,12 +1,10 @@
 require 'roo'
 class LoginPage  < SitePrism::Page
-    @xlsx = Roo::Spreadsheet.open('C:\Fernanda\ProjetosEstágioRuby\AutomacaoForwardCarRuby\excel\ForwardCar.xlsx')
-    $username1=@xlsx.cell(2,3)
-    $senha1=@xlsx.cell(2,4)
-    $username2=@xlsx.cell(3,3)
-    $senha2=@xlsx.cell(3,4)
+    @xlsx = Roo::Spreadsheet.open('.\excel\ForwardCar.xlsx')
+    $username=@xlsx.cell(3,3)
+    $senha=@xlsx.cell(3,4)
+
     set_url "#/login"
-    @xlsx = Roo::Spreadsheet.open('C:\Fernanda\ProjetosEstágioRuby\AutomacaoForwardCarRuby\excel\ForwardCar.xlsx')
     element :userNameLogin, :xpath, "//*[@id='login-form']/fieldset/div[1]/input"
     element :passwordLogin, :xpath, "//*[@id='login-form']/fieldset/div[2]/input"
     element :signLogin, :xpath, "//*[@id='login-form']/fieldset/div[4]/div/div/a"
@@ -31,8 +29,8 @@ class LoginPage  < SitePrism::Page
     
     end
     def realizarLogin
-        userNameLogin.set $username2
-        passwordLogin.set $senha2
+        userNameLogin.set $username
+        passwordLogin.set $senha
         buttonSignLogin.click
     end
 end

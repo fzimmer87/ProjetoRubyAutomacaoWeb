@@ -22,6 +22,6 @@ Dado('que estou na pagina de cadastro da ForwardCar') do
     login.conferirUrlRegister
   end
   
-  #teste3
+ 
 
   
