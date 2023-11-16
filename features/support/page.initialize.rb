@@ -9,5 +9,8 @@ Dir[File.join(File.dirname(__FILE__),'~\..\AutomacaoForwardCarRuby\features\page
     end
     def inventory
       @inventory||=InventoryPage.new
-  end
+    end
+    def emprestimo
+      @emprestimo||=EmprestimoPage.new
+    end
 end

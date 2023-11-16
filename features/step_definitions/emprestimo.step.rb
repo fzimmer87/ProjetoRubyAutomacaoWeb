@@ -1,19 +1,21 @@
 Dado('realizo login') do
-    pending # Write code here that turns the phrase above into concrete actions
+  # register.realizarCadastroParaLogin
+  login.realizarLogin
   end
   
   Dado('clico em LoanApplication') do
-    pending # Write code here that turns the phrase above into concrete actions
+    emprestimo.clicarBotaoLoanApplication
   end
   
   Quando('digito meus dados nos campos de cadastro de emprestimo') do
-    pending # Write code here that turns the phrase above into concrete actions
+    emprestimo.preencherDados
   end
   
   Quando('clico LoanStatus') do
-    pending # Write code here that turns the phrase above into concrete actions
+    sleep 5
+    emprestimo.clicarBotaoLoanStatus
   end
   
   Entao('consigo consultar dados do meu emprestimo') do
-    pending # Write code here that turns the phrase above into concrete actions
+    emprestimo.consultarEmprestimo
   end

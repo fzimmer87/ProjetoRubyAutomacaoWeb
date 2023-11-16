@@ -1,0 +1,38 @@
+require 'roo'
+class EmprestimoPage < SitePrism::Page
+    set_url "#/loanApp"
+    @xlsx = Roo::Spreadsheet.open('C:\Fernanda\ProjetosEstágioRuby\AutomacaoForwardCarRuby\excel\Emprestimo.xlsx')
+    $endereco=@xlsx.cell(1,1)
+    $cidade=@xlsx.cell(2,1)
+    $nascimento=@xlsx.cell(3,1)
+    $valorEmprestimo=@xlsx.cell(4,1)
+    element :botaoLoanApplication, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[4]/a"
+    element :campoEndereco, :id, "address-line1"
+    element :campoCity, :id, "city"
+    element :campoDataNascimento, :id, "dob"
+    element :campoYearly, :id, "yIncome"
+    element :campoLoanAmount, :id, "lAmount"
+    element :botaoApply, :css, ".btn-toolbar > .btn:nth-child(1)"
+    element :botaoOk, :css, ".modal-footer > .btn"
+    element :botaoLoanStatus, :css, ".col-md-3:nth-child(4) p"
+    element :consulta, :id, "1700108379510-uiGrid-0006-header-text"
+
+    def clicarBotaoLoanApplication
+        botaoLoanApplication.click
+    end
+    def preencherDados
+        campoEndereco.set $endereco
+        campoCity.set $cidade
+        campoDataNascimento.set $nascimento
+        campoYearly.set $valorEmprestimo
+        botaoApply.click
+        botaoOk.click
+    end
+    def clicarBotaoLoanStatus
+        botaoLoanStatus.click
+    end
+    def consultarEmprestimo
+        expect(page).to have_current_path('http://localhost:3434/cars-app/#/loanStatus',url:true)
+    end
+    
+end

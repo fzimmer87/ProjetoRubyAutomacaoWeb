@@ -9,6 +9,7 @@ class LoginPage  < SitePrism::Page
     element :passwordLogin, :xpath, "//*[@id='login-form']/fieldset/div[2]/input"
     element :signLogin, :xpath, "//*[@id='login-form']/fieldset/div[4]/div/div/a"
     element :buttonGuest, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/a/span[1]"
+    element :buttonLogin, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[1]/a"
     element :buttonLogInGuest, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[5]/ul/li[1]/a"
     element :userNameLogin, :xpath, "//*[@id='login-form']/fieldset/div[1]/input"
     element :passwordLogin, :xpath, "//*[@id='login-form']/fieldset/div[2]/input"
@@ -29,6 +30,8 @@ class LoginPage  < SitePrism::Page
     
     end
     def realizarLogin
+        buttonGuest.click
+        buttonLogin.click
         userNameLogin.set $username
         passwordLogin.set $senha
         buttonSignLogin.click
