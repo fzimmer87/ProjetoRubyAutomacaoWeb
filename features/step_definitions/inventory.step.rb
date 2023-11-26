@@ -1,12 +1,19 @@
 Dado('clico no botao search na pagina inicial') do
-    inventory.clicarBotaoSearchPaginaHome
-  end
-  
-  Quando('digito o modelo Acura no campo de pesquisa') do
-    sleep 3
-  inventory.digitarSearchInventory
-  end
-  
-  Entao('sistema me retorna modelos digitadas') do
-    inventory.encontrarNomeAcuraNaTela
-  end
+  inventory.clicarBotaoSearchPaginaHome
+end
+
+Dado('clico no cadeado') do
+inventory.clicarCadeado
+end
+
+Dado('clico em edit de algum modelo') do
+inventory.editarVeiculo
+end
+
+Quando('modifico as informacoes do campo price') do
+inventory.digitarCampoPrice
+end
+
+Entao('sistema me mostra uma mensagem car updated') do
+inventory.validacaoMensagem
+end

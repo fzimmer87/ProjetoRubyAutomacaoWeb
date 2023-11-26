@@ -21,10 +21,12 @@ E preencho campos de login com dados cadastrados
 Entao sistema retorna para pagina principal com meu nome no lugar de Guest
 
 @CT004
-Cenario: Realizar pesquisa por cor de carro
+Cenario: Editar carro na inventory
 E clico no botao search na pagina inicial
-Quando digito o modelo Acura no campo de pesquisa
-Entao sistema me retorna modelos digitadas
+E clico no cadeado
+E clico em edit de algum modelo
+Quando modifico as informacoes do campo price
+Entao sistema me mostra uma mensagem car updated
 
 @CT005
 Cenario: Realizar empréstimo
