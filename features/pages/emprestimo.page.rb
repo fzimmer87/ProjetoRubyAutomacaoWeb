@@ -1,11 +1,5 @@
-require 'roo'
 class EmprestimoPage < SitePrism::Page
     set_url "#/loanApp"
-    @xlsx = Roo::Spreadsheet.open('C:\Fernanda\ProjetosEstágioRuby\AutomacaoForwardCarRuby\excel\Emprestimo.xlsx')
-    $endereco=@xlsx.cell(1,1)
-    $cidade=@xlsx.cell(2,1)
-    $nascimento=@xlsx.cell(3,1)
-    $valorEmprestimo=@xlsx.cell(4,1)
     element :botaoLoanApplication, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[4]/a"
     element :campoEndereco, :id, "address-line1"
     element :campoCity, :id, "city"

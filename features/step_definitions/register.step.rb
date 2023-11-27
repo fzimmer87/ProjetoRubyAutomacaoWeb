@@ -3,7 +3,7 @@ Dado('que estou na pagina de cadastro da ForwardCar') do
   end
   
   Quando('digito dados solicitados corretamente') do
-    register.realizarCadastro
+    register.realizarCadastro 
 
   end
   
