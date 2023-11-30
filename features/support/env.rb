@@ -8,6 +8,7 @@ require 'rspec/expectations'
 require 'roo'
 require 'fileutils'
 require 'open-uri'
+require 'pry'
 require_relative 'page.initialize.rb'
 include RSpec::Matchers
 

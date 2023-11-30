@@ -13,4 +13,7 @@ Dir[File.join(File.dirname(__FILE__),'~\..\AutomacaoForwardCarRuby\features\page
     def emprestimo
       @emprestimo||=EmprestimoPage.new
     end
+    def excel
+      @excel||=ExcelPage.new
+    end
 end

@@ -1,10 +1,11 @@
 Dado('que estou na pagina de cadastro da ForwardCar') do
-  register.load
+  excel.load
   end
   
   Quando('digito dados solicitados corretamente') do
-    register.realizarCadastro 
-
+    # register.firstName.send_keys('teste')
+    excel.cadastro_de_usuario
+    
   end
   
   Entao('sitema me retorna para pagina de login') do
