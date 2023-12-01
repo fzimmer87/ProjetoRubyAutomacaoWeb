@@ -27,11 +27,24 @@ class LoginPage  < SitePrism::Page
         buttonLogInGuest.click
     
     end
-    def realizarLogin
+    def realizarLogin (username, password)
         buttonGuest.click
         buttonLogin.click
-        userNameLogin.set $username3
-        passwordLogin.set $senha3
+        userNameLogin.set (username)
+        passwordLogin.set (password)
         buttonSignLogin.click
+    end
+    def realizarCadastroParaLogin 
+        sleep 2
+        buttonGuestSuperior.click
+        sleep 2
+        buttonRegisterGuest.click
+        sleep 2
+        firstName.send_keys(firstname)
+        lastName.send_keys(lastname)
+        userName.send_keys(username)
+        passWord.send_keys(password)
+        sleep 2
+        buttonRegisterRegistro.click
     end
 end

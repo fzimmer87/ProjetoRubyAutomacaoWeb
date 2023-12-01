@@ -15,8 +15,8 @@ Dado('que estou na pagina de cadastro da ForwardCar') do
    
   end
   Quando('digito dados solicitados com username ja cadastrado') do
-    register.realizarCadastro
-    register.realizarCadastroNovamente
+    excelTabela2.cadastro_de_usuario_mesmo_username
+    
   end
   
   Entao('sistema nao realiza cadastro novo cadastro') do

@@ -1,10 +1,10 @@
 require 'roo'
-class ExcelPage < SitePrism::Page
+class ExcelPageTabela2 < SitePrism::Page
 # inicializa a planilha através do caminho
 set_url "#/home"
 spreadsheet = Roo::Spreadsheet.open('C:\Fernanda\ProjetosEstágioRuby\AutomacaoForwardCarRuby\excel\ForwardCar.xlsx')
 # dados da primeira tabela
-sheet = spreadsheet.sheet(0)
+sheet = spreadsheet.sheet(1)
 # indica que o cabeçalho está na primeira linha
 headers = sheet.row(1)
 # Arrays para armazenar cada dado individual
@@ -26,7 +26,7 @@ $passwords = []
   
   end
 
-def cadastro_de_usuario
+def cadastro_de_usuario_mesmo_username
   i = 0        
 while i < $firstnames.size do 
   teste = RegisterPage.new
@@ -34,17 +34,4 @@ while i < $firstnames.size do
     i += 1
   end
 end
-  def login_de_usuario
-    i = 0        
-  while i < $usernames.size do 
-    teste = LoginPage.new
-      teste.realizarLogin($usernames[i], $passwords[i])
-      i += 1
-    end
-  
 end
-
-end
-
-
-
