@@ -1,5 +1,5 @@
 class EmprestimoPage < SitePrism::Page
-    set_url "#/loanApp"
+    set_url "/"
     element :botaoLoanApplication, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[4]/a"
     element :campoEndereco, :id, "address-line1"
     element :campoCity, :id, "city"
@@ -10,17 +10,21 @@ class EmprestimoPage < SitePrism::Page
     element :botaoOk, :css, ".modal-footer > .btn"
     element :botaoLoanStatus, :css, ".col-md-3:nth-child(4) p"
     element :consulta, :id, "1700108379510-uiGrid-0006-header-text"
-
-    def clicarBotaoLoanApplication
-        botaoLoanApplication.click
-    end
-    def preencherDados
-        campoEndereco.set $endereco
-        campoCity.set $cidade
-        campoDataNascimento.set $nascimento
-        campoYearly.set $valorEmprestimo
+    element :campoNomeEmprestimo, :xpath, "/html/body/div[1]/div[2]/div/div/form/div[1]/div[1]/div[1]/input"
+    element :campoSobrenomeEmprestimo, :xpath, "/html/body/div[1]/div[2]/div/div/form/div[1]/div[1]/div[2]/input"
+    element :buttonHome, :xpath, "/html/body/div[1]/div[1]/div/div/div[2]/ul/li[1]/a"
+ 
+  
+    def preencherDadosEmprestimo(nome,sobrenome,endereco,cidade,nascimento,valorEmprestimo)
+        campoNomeEmprestimo.set (nome)
+        campoSobrenomeEmprestimo.set (sobrenome)
+        campoEndereco.set (endereco)
+        campoCity.set (cidade)
+        campoDataNascimento.set (nascimento)
+        campoYearly.set (valorEmprestimo)
         botaoApply.click
         botaoOk.click
+        botaoLoanApplication.click
     end
     def clicarBotaoLoanStatus
         botaoLoanStatus.click
@@ -28,5 +32,9 @@ class EmprestimoPage < SitePrism::Page
     def consultarEmprestimo
         expect(page).to have_current_path('http://localhost:3434/cars-app/#/loanStatus',url:true)
     end
-    
+    def clicarBotaoLoanApplication
+        sleep 3
+        buttonHome.click
+        botaoLoanApplication.click
+    end
 end

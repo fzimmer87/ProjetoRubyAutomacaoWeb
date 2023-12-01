@@ -10,7 +10,7 @@ class LoginPage  < SitePrism::Page
     element :userNameLogin, :xpath, "//*[@id='login-form']/fieldset/div[1]/input"
     element :passwordLogin, :xpath, "//*[@id='login-form']/fieldset/div[2]/input"
     element :buttonSignLogin, :xpath, "//*[@id='login-form']/fieldset/div[3]/button"
-    
+   
     def conferirURLLogin
         expect(page).to have_current_path('http://localhost:3434/cars-app/#/login',url:true)
     end
@@ -46,5 +46,12 @@ class LoginPage  < SitePrism::Page
         passWord.send_keys(password)
         sleep 2
         buttonRegisterRegistro.click
+    end
+    def realizarLoginEmprestimos (username, password)
+        buttonGuest.click
+        buttonLogin.click
+        userNameLogin.set (username)
+        passwordLogin.set (password)
+        buttonSignLogin.click
     end
 end

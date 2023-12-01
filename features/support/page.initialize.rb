@@ -19,4 +19,7 @@ Dir[File.join(File.dirname(__FILE__),'~\..\AutomacaoForwardCarRuby\features\page
     def excelTabela2
       @excel2||=ExcelPageTabela2.new
     end
+    def excelTabela3
+      @excel3||=ExcelPageTabela3.new
+    end
   end
