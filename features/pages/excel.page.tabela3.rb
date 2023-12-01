@@ -8,10 +8,10 @@ sheet = spreadsheet.sheet(2)
 # indica que o cabeçalho está na primeira linha
 headers = sheet.row(1)
 # Arrays para armazenar cada dado individual
-$firstnames = []
-$lastnames = []
-$usernames = []
-$passwords = []
+$firstnames1 = []
+$lastnames1 = []
+$usernames1 = []
+$passwords1 = []
 $enderecos = []
 $cidades = []
 $nascimentos = []
@@ -22,10 +22,10 @@ $valoremprestimos = []
   #inserindo dados das linhas em cada variavel
   firstname, lastname, usarname, password, endereco, cidade, nascimento, valoremprestimo   = row_data
   # Salvando cada item no seu array
-  $firstnames << firstname
-  $lastnames << lastname
-  $usernames << usarname
-  $passwords << password
+  $firstnames1 << firstname
+  $lastnames1 << lastname
+  $usernames1 << usarname
+  $passwords1<< password
   $enderecos << endereco
   $cidades << cidade
   $nascimentos << nascimento
@@ -37,7 +37,7 @@ def cadastro_de_usuario_emprestimo
   i = 0        
 while i < $firstnames.size do 
   teste = RegisterPage.new
-    teste.criarCadastroeLoginParaEmprestimo($firstnames[i], $lastnames[i], $usernames[i], $passwords[i])
+    teste.criarCadastroeLoginParaEmprestimo($firstnames1[i], $lastnames1[i], $usernames1[i], $passwords1[i])
     i += 1
   end
 end
@@ -45,7 +45,7 @@ def login_de_usuario_emprestimo
     i = 0        
   while i < $usernames.size do 
     teste = LoginPage.new
-      teste.realizarLoginEmprestimos($usernames[i], $passwords[i])
+      teste.realizarLoginEmprestimos($usernames1[i], $passwords1[i])
       i += 1
     end
 end
@@ -53,7 +53,7 @@ def realizaEmprestimo
     i = 0        
     while i < $usernames.size do 
       teste = EmprestimoPage.new
-        teste.preencherDadosEmprestimo($firstnames[i], $lastnames[i], $enderecos[i],$cidades[i],$nascimentos[i],$valoremprestimos[i])
+        teste.preencherDadosEmprestimo($firstnames1[i], $lastnames1[i], $enderecos[i],$cidades[i],$nascimentos[i],$valoremprestimos[i])
         i += 1
       end
     end

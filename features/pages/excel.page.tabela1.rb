@@ -8,7 +8,7 @@ sheet = spreadsheet.sheet(0)
 # indica que o cabeçalho está na primeira linha
 headers = sheet.row(1)
 # Arrays para armazenar cada dado individual
-$dados_usuarios = []
+
 $firstnames = []
 $lastnames = []
 $usernames = []
